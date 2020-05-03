@@ -1,0 +1,19 @@
+{% include 'socialdistancing/header.html' %}
+{% if requests %}
+<div class="container">
+    <hr>
+    {% for re in requests %}
+
+    <hr>
+    <h1 style="font-family: 'Anton', sans-serif;">{{re.shop_name.shop_name}}</h1>
+    <h2 style="font-family: 'Pacifico', cursive;">Expected Going Time:-{{re.expected_going_time}} </h2>
+    <h2 style="font-family: 'Pacifico', cursive;"> Expected Leaving Time :-{{re.expected_leaving_time}} </h2>
+    <button class="search-box2"><a href='delete/{{re.id}}/'>Delete</a></button>
+    {% endfor %}
+    {% else %}
+    You have not placed any requests
+    {% endif %}
+    <hr>
+</div>
+
+{% include 'socialdistancing/footer.html' %}

@@ -1,0 +1,20 @@
+{% include 'socialdistancing/header.html' %}
+<div class="container">
+    {% if notifications %}
+    <hr>
+    {% for notification in notifications %}
+    {% if notification.status %}
+    Request Accepted <br>
+    <button class="btnn"><a href="delete/{{notification.id}}/">Delete</a></button>
+    {% else %}
+    Request has been declined
+    {% endif %}
+    <h2> Message from the shop owner is:- {{notification.message}} </h2> <br>
+    <hr>
+    {% endfor %}
+    {% else %}
+    Your requests are under evaluation
+    {% endif %}
+</div>
+
+{% include 'socialdistancing/footer.html' %}

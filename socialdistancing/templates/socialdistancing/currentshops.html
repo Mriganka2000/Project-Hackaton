@@ -1,0 +1,19 @@
+{% load static %}
+
+{% include 'socialdistancing/header.html' %}
+{% for shop in shops %}
+
+<div class="container">
+    <h1 style="font-family: 'Pacifico', cursive;"> Shop Name :- <a href="changeshopdetails/{{shop.id}}/">
+            {{shop.shop_name}} </a> </h1>
+    <h2 style="font-family: 'Pacifico', cursive;"> Shop Location:- {{shop.location}} </h2>
+    <h3> Opening Time:- {{shop.opening_time}} </h3>
+    <h3> Closing Time:- {{shop.closing_time}} </h3>
+    <h3> Type :- {{shop.shop_type}} </h3>
+    <button class="search-box2"><a href="viewrequests/{{shop.id}}/"> See All Requests </a></button>
+    <hr> <br>
+</div>
+
+{% endfor %}
+
+{% include 'socialdistancing/footer.html' %}

@@ -1,0 +1,21 @@
+{% load static %}
+
+{% include 'socialdistancing/header.html' %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+{% endfor %}
+{% endif %}
+<div class="container">
+    <form method='POST'>
+        {% csrf_token %}
+        <label style="font-family: 'Roboto Mono', monospace;" for="">Enter Your Expected Time of reaching :-</label>
+        <br>
+        <input class="box1" type="time" name="expected_going_time" id=""> <br> <br>
+        <label style="font-family: 'Roboto Mono', monospace;" for="">Enter Your Expected Time of leaving :-</label> <br>
+        <input type="time" name="expected_leaving_time" id=""> <br> <br>
+        <input class="btnn" type="submit" value="Place">
+    </form>
+</div>
+
+{% include 'socialdistancing/footer.html' %}

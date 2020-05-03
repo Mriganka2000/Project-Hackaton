@@ -1,0 +1,15 @@
+{% include 'socialdistancing/header.html' %}
+{% for shop in shops %}
+<div class="container">
+    <hr>
+    <h1 style="font-family: 'Pacifico', cursive;">{{shop.shop_name}}</h1>
+    <h1 style="font-family: 'Pacifico', cursive;"> Owner Name :- {{shop.owner.user.username}} </h1>
+    <h2> Shop Location:- {{shop.location}} </h2>
+    <h2> Opening Time:- {{shop.opening_time}} </h2>
+    <h2> Closing Time:- {{shop.closing_time}} </h2>
+    <h2> Type :- {{shop.shop_type}} </h2>
+    <button class="search-box2"><a href="placerequest/{{shop.id}}/"> PlaceRequest </a></button>
+</div>
+{% endfor %}
+<hr>
+{% include 'socialdistancing/footer.html' %}
