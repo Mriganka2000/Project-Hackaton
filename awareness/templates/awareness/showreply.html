@@ -1,0 +1,26 @@
+{% load static %}
+{% include 'awareness/header.html' %}
+
+{% for reply in replies %}
+<div class="container">
+    <div class="design">
+        <div class="card border-primary mb-3" style="width: 50rem; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;">
+            <div class="card-body">
+                <h3 class="card-subtitle mb-2 text-muted" style="font-family: 'Fira Sans Condensed', sans-serif;">
+                    {{reply.reply}}</h3>
+                <p class="card-text" style="font-family: 'Fira Sans Condensed', sans-serif;"> Upvote gets :-
+                    {{reply.upvote}}</p>
+                <p class="card-text" style="font-family: 'Fira Sans Condensed', sans-serif;"> Downpvote gets :-
+                    {{reply.downvote}}</p>
+                <h4 class="card-text"><small class="text-muted">Posted By </small></h4>
+                <button class="btnn3"><a href="upvote/{{reply.id}}/"><i class="fa fa-thumbs-up"
+                            aria-hidden="true"></i><a></button>
+                <button class="btnn4"><a href="downvote/{{reply.id}}/"><i class="fa fa-thumbs-down"
+                            aria-hidden="true"></i></a></button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% include 'awareness/footer.html' %}
