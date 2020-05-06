@@ -6,16 +6,21 @@
 <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
 {% endfor %}
 {% endif %}
-<div class="container">
-    <form method='POST'>
+<h1 style="text-align: center;color:#fff">Place Your Requests With Proper Timings</h1>
+    <form method='POST' class="fm">
         {% csrf_token %}
-        <label style="font-family: 'Roboto Mono', monospace;" for="">Enter Your Expected Time of reaching :-</label>
-        <br>
-        <input class="box1" type="time" name="expected_going_time" id=""> <br> <br>
-        <label style="font-family: 'Roboto Mono', monospace;" for="">Enter Your Expected Time of leaving :-</label> <br>
-        <input type="time" name="expected_leaving_time" id=""> <br> <br>
-        <input class="btnn" type="submit" value="Place">
+        <ul>
+            <li>
+                <input type="time" name="expected_going_time" id="" data-toogle="tootlip" title="Enter Your Expected time of reaching" data-placement="auto">
+            </li>
+            <li>
+                <input type="time" name="expected_leaving_time" id=""data-toogle="tootlip" title="Enter Your Expected time of leaving" data-placement="auto">
+            </li>
+            <li>
+                <input class="btn btnx" type="submit" value="Place">
+            </li>
+        </ul>
     </form>
-</div>
+
 
 {% include 'socialdistancing/footer.html' %}
