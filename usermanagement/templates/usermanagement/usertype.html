@@ -5,17 +5,18 @@
 {%  if user_prof.usertype %}
 {{user_prof.usertype}}
 {%else%}
-{{user_prof}}
+
 <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/usertype.css' %}"> -->
-<div class="container">
-    <form class="container6" method='POST'>
+
+    <form class="loginboxuser" method='POST'>
         {% csrf_token %}
-        <input type="radio" name="user_type" id="" value="Shopkeeper"> Shopkeeper
-        <input type="radio" name="user_type" id="" value="Doctor"> Doctor
-        <input type="radio" name="user_type" id="" value="Normal_User"> Normal_User
+    
+        <input type="radio" name="user_type" id="" value="Shopkeeper"> <label for="">Shopkeeper</label> <br>
+        <input type="radio" name="user_type" id="" value="Doctor"> <label>Doctor</label> <br>
+        <input type="radio" name="user_type" id="" value="Normal_User"> <label>Normal_User</label>
         <input class="btnn6" type="submit" value="Submit">
     </form>
-</div>
+
 {%endif%}
 {% else %}
 <h1>Login First</h1>
